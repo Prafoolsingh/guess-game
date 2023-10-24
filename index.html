@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>guess master</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body onload="init()">
+    <main>
+      <div id="welcomeScreen">
+        <h2>Guess the random number between 1-100</h2>
+        <img src="./images/images.jpeg" alt="logo" />
+
+        <section class="eventSection">
+          <p>select the difficulty</p>
+          <div class="btn-wrapper">
+            <button onclick="easyMode()">Easy:10 attempts</button>
+            <button onclick="hardMode()">Hard:5 attempts</button>
+          </div>
+        </section>
+      </div>
+
+      <!-- our actual game area -->
+      <div id="gameArea">
+        <div id="newGameButton">
+          <button onclick="newGameBegin()">New game</button>
+        </div>
+        <section>
+          <h3 id="textOutput">Your Guess</h3>
+          <input
+            type="number"
+            id="inputBox"
+            min="1"
+            max="100"
+            placeholder="Enter your number"
+            onchange="compareGuess()"
+          />
+        </section>
+
+        <section class="stats">
+          <div class="info">
+            <p>Number of previous attempts</p>
+            <span id="attempts">0</span>
+          </div>
+          <div class="info">
+            <p>Number of previous guesses</p>
+            <span id="guesses">0</span>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script src="index.js"></script>
+  </body>
+</html>
